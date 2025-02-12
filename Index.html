@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio</title>
+    <meta name="description" content="Welcome to my creative portfolio showcasing photography, design, and artwork.">
+    <meta name="keywords" content="portfolio, photography, design, artwork">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap JS Bundle (Includes Carousel) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(to right, blue, lightblue);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        nav {
+            background-color: blue;
+            color: white;
+            padding: 5px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+           /* display: flex;*/
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffcc00;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #cce7ff;
+            color: #003366;
+            border-bottom: 5px solid #0044cc;
+        }
+        .hero h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.3em;
+        }
+        .join-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .join-button:hover {
+            background-color: #0033aa;
+        }
+        hr {
+            border: 0;
+            height: 2px;
+            background: #ccc;
+            margin: 20px 0;
+        }
+        /* Gallery Images - Floating Animation */
+/*@keyframes floatImage {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}*/
+
+.gallery img {
+    width: 100%;
+    height:400px;
+    max-width: 320px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    animation: floatImage 3s ease-in-out infinite;  /* Continuous floating effect */
+}
+
+/* On Hover - Scale Effect */
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+/* Carousel Image Sizing */
+.carousel-inner img {
+    height: 400px; /* Adjust height as needed */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Custom Carousel Buttons */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    transform: scale(1.1);
+}
+
+
+        section {
+            padding: 30px;
+        }
+        #about pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        #lists ul, #lists ol {
+            margin: 10px 0;
+            padding-left: 40px;
+        }
+        
+/* Social Icons *//* Social Media Section */
+.social-section {
+    background: #f8f9fa;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-section h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0044cc;
+}
+
+.social-section p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.social-icons a i {
+    font-size: 1.8rem;
+}
+
+/* Background Colors for Social Icons */
+.whatsapp { background: #25D366; }
+.telegram { background: #0088CC; }
+.twitter { background: #1DA1F2; }
+.instagram { background: #C13584; }
+.tiktok { background: #010101; }
+.youtube { background: #FF0000; }
+
+/* Hover Effects */
+.social-icons a:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.2);
+}
+
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(to right, blue, lightblue);
+            color: white;
+        }
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <h2>Unleashing Creativity Through Art & Design</h2>
+    <h4>Discover My Passion for Visual Storytelling</h4>
+</header>
+
+    <nav>
+        <a href="#portfolio">Portfolio</a>
+         <a href="#join-button">MyTeam</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact</a>
+    </nav>
+   <div class="hero" id="join-button">
+    <p><strong>Transforming Ideas into  Reality</strong></p>
+    <p>Welcome to a <strong><em>world</em></strong> where <i>Art</i>,<i>design</i> , and <i>technology</i> blend seamlessly. Join our <b>creative journey</b> and explore the <u>endless</u> possibilities of innovation.</p>
+    <a href="registerform.html" class="join-button">Become a Member</a>
+</div>
+
+    <hr>
+   <section id="portfolio" class="gallery">
+    <h2>My Creative Portfolio</h2>
+    <p>Explore a collection of my finest work in photography, digital art, and web design. Each piece reflects my dedication to creativity and storytelling.</p>
+    <img src="Tanzania-GTS.webp" alt="A stunning landscape capturing nature’s beauty" loading="lazy">
+    <img src="Design.webp" alt="A creative design showcasing modern aesthetics" loading="lazy">
+    <img src="Aristoteles_Louvre.webp" alt="An artistic representation of classical influence" loading="lazy">
+    <img src="Jion ya leo.webp" alt="jioni ya leo ni njema" loading="lazy">
+    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="image1.webp" class="d-block w-100" alt="Image 1">
+        </div>
+        <div class="carousel-item">
+            <img src="image2.webp" class="d-block w-100" alt="Image 2">
+        </div>
+        <div class="carousel-item">
+            <img src="image3.webp" class="d-block w-100" alt="Image 3">
+        </div>
+        <div class="carousel-item">
+            <img src="image4.webp" class="d-block w-100" alt="Image 4">
+        </div>
+    </div>
+    <!-- Previous Button -->
+    <a class="carousel-control-prev" href="#imageCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </a>
+    <!-- Next Button -->
+    <a class="carousel-control-next" href="#imageCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
+</div>
+
+  
+
+</section>
+
+    <hr>
+   <section id="about">
+    <h2>About Me</h2>
+    <pre>Hello! I’m a passionate creative professional specializing in photography,graphic design, and web development.<br> My work is driven by a love for storytelling and an eye for aesthetics.</pre>
+    <p>Through my portfolio, I am to showcase the power of visual expression and inspire others to embrace creativity in their own unique way.</p>
+</section>
+
+    <section id="lists">
+    <h2>Skills & Expertise</h2>
+    <p>By joining our team, you gain access to hands-on learning experiences in various creative fields, including:</p>
+    <ul>
+        <li><strong>Photography:</strong> Master the art of capturing stunning visuals.</li>
+        <li><strong>Graphic Design:</strong> Learn to create compelling visual content.</li>
+        <li><strong>Web Development:</strong> Build engaging and interactive websites.</li>
+    </ul>
+
+
+<h2>Programming Languages You Can Learn</h2>
+<p>Enhance your coding skills with our expert-guided courses in the following languages:</p>
+<ol>
+    <li><strong>HTML & CSS:</strong> The building blocks of web design.</li>
+    <li><strong>JavaScript:</strong> Create dynamic and interactive websites.</li>
+    <li><strong>Python & Django:</strong> Develop powerful web applications.</li>
+    <li><strong>C++:</strong> Learn the fundamentals of high-performance programming.</li>
+</ol>
+</section>
+   <section id="contact">
+    <h2>Get in Touch</h2>
+    <p>Have questions or want to collaborate? Feel free to reach out!</p>
+    <p><strong>Email:</strong> <a href="mailto:example@gmail.com">example@example.com</a></p>
+    <p><strong>Phone:</strong> <a href="tel:+255747000422">+255 747 000 422</a></p>
+</section>
+
+    
+    <div class="social-section text-center">
+    <h3>Connect with Me on Social Media</h3>
+    <p>Follow me for exclusive updates, behind-the-scenes content, and creative insights.</p>
+    
+    <div class="social-icons">
+        <a href="https://wa.me/+255621218272" class="icon whatsapp" title="Chat with me on WhatsApp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="https://t.me/Mr_Tirrion_Toronto" class="icon telegram" title="Join my Telegram community">
+            <i class="fab fa-telegram-plane"></i> Telegram
+        </a>
+        <a href="https://x.com/@Mr_Tirrion" class="btn btn-dark" target="_blank">
+    <i class="fa-brands fa-x-twitter"></i> Follow on X
+</a>
+
+        <a href="https://instagram.com/mr_tirrion_toronto" class="icon instagram" title="See my latest posts on Instagram">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://www.tiktok.com/@mr_tirrion_toronto" class="icon tiktok" title="Watch my videos on TikTok">
+            <i class="fab fa-tiktok"></i> TikTok
+        </a>
+        <a href="https://www.youtube.com/c/@lucasjames5505?sub_confirmation=1" class="icon youtube" title="Subscribe to my YouTube channel">
+            <i class="fab fa-youtube"></i> YouTube
+        </a>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var myCarousel = new bootstrap.Carousel(document.querySelector("#imageCarousel"), {
+        interval: 3000, // Change image every 3 seconds
+        pause: "hover", // Pause when hovered
+        wrap: true // Keep looping
+    });
+});
+</script>
+<!--image scripts-->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var myCarousel = new bootstrap.Carousel(document.querySelector("#imageCarousel"), {
+        interval: 3000, // Auto-slide every 3 seconds
+        pause: "hover",
+        wrap: true
+    });
+
+    // Enable Swipe on Mobile
+    var carouselElement = document.querySelector("#imageCarousel");
+    var touchStartX = 0;
+    var touchEndX = 0;
+
+    carouselElement.addEventListener("touchstart", function (event) {
+        touchStartX = event.changedTouches[0].screenX;
+    });
+
+    carouselElement.addEventListener("touchend", function (event) {
+        touchEndX = event.changedTouches[0].screenX;
+        if (touchEndX < touchStartX) {
+            myCarousel.next();
+        } else if (touchEndX > touchStartX) {
+            myCarousel.prev();
+        }
+    });
+});
+</script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <footer>
+        <p>&copy; 2025 Creative Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>
