@@ -216,11 +216,54 @@
     </style>
 </head>
 <body>
-    <header>
-    <h2>Unleashing Creativity Through Art & Design</h2>
-    <h4>Discover My Passion for Visual Storytelling</h4>
+    
+<header>
+    <h2 id="headerTitle">Unleashing Creativity Through Art & Design</h2>
+    <h4 id="headerSubtitle">Discover My Passion for Visual Storytelling</h4>
+    <!-- Language Switcher -->
+    <div>
+        <button id="lang-en" class="btn btn-primary">English</button>
+        <button id="lang-sw" class="btn btn-secondary">Swahili</button>
+    </div>
 </header>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const translations = {
+            en: {
+                headerTitle: "Unleashing Creativity Through Art & Design",
+                headerSubtitle: "Discover My Passion for Visual Storytelling",
+                portfolioTitle: "My Creative Portfolio",
+                contactTitle: "Get in Touch",
+            },
+            sw: {
+                headerTitle: "Kutoa Ubunifu Kupitia Sanaa na Ubunifu",
+                headerSubtitle: "Gundua Shauku Yangu ya Kuandika Hadithi za Picha",
+                portfolioTitle: "Kwingineko Yangu ya Ubunifu",
+                contactTitle: "Wasiliana Nasi",
+            },
+        };
+
+        const elements = {
+            headerTitle: document.querySelector("#headerTitle"),
+            headerSubtitle: document.querySelector("#headerSubtitle"),
+            portfolioTitle: document.querySelector("#portfolio h2"),
+            contactTitle: document.querySelector("#contact h2"),
+        };
+
+        document.getElementById("lang-en").addEventListener("click", () => {
+            for (const key in elements) {
+                elements[key].textContent = translations.en[key];
+            }
+        });
+
+        document.getElementById("lang-sw").addEventListener("click", () => {
+            for (const key in elements) {
+                elements[key].textContent = translations.sw[key];
+            }
+        });
+    });
+</script>
     <nav>
         <a href="#portfolio">Portfolio</a>
          <a href="#join-button">MyTeam</a>
